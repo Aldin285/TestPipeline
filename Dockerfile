@@ -43,6 +43,16 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml \
 
 ################################################################################
 
+# New test stage
+FROM package as test
+
+WORKDIR /build
+
+RUN --mount=type=bind,source=pom.xml,target=pom.xml \
+    --mount=type=cache,target=/root/.m2 \
+    ./mvnw test
+
+    
 # Create a stage for extracting the application into separate layers.
 # Take advantage of Spring Boot's layer tools and Docker's caching by extracting
 # the packaged application into separate layers that can be copied into the final stage.

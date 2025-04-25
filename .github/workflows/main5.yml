@@ -33,4 +33,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
-          tags: spring-petclinic-pipeline-server:latest
+          load: true
+          tags: spring-petclinic-pipeline-server2:latest

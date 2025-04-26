@@ -34,4 +34,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
-          tags: spring-petclinic-pipeline-server:latest
+          tags: aldin285/spring-petclinic-pipeline-server:latest

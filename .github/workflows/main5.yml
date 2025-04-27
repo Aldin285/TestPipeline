@@ -34,4 +34,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           target: final
-          tags: aldin285/spring-petclinic-pipeline-server:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/spring-petclinic-pipeline-server:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/spring-petclinic-pipeline-server:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/spring-petclinic-pipeline-server:buildcache,mode=max
